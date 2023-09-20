@@ -97,7 +97,7 @@ export const Header = () => {
         )
         :
         (
-          <div className="flex w-[125px] justify-between items-center py-2 px-4 bg-lightBlack border border-borderColor rounded-10 hover:cursor-pointer hover:opacity-70 transition">
+          <div className="flex w-[125px] text-white justify-between items-center py-2 px-4 bg-lightBlack border border-borderColor rounded-10 hover:cursor-pointer hover:opacity-70 transition">
             <Link href={"/dapp"}>Dapp</Link>
             <Image src={rightArrow} width={20} height={24} alt="Account" className="opacity-60 h-[22px]" />
           </div>
