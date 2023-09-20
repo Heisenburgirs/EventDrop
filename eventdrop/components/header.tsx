@@ -19,7 +19,7 @@ export const Header = () => {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
 
   return (
-    <div className="w-full py-4 px-8 text-white">
+    <div className="w-full py-4 px-8">
       <div className="w-full flex justify-between items-center">
         <Link href="/" className="flex text-medium text-white items-center font-bold px-4 py-4">
           Event<span className="text-orange">Drop</span>
@@ -33,7 +33,7 @@ export const Header = () => {
                     {/* Profile trigger */}
                     <div className="flex gap-4 items-center shadow-md py-2 rounded-15 cursor-pointer">
                         <div className="flex w-[160px] justify-between items-center px-2 bg-lightBlack py-2 rounded-10 border border-borderColor">
-                            <div className="text-xsmall">Heisenburger</div>
+                            <div className="text-xsmall text-white">Heisenburger</div>
                             <Image src={arrow} width={12} height={12} alt="Account" className="opacity-60" />
                         </div>
                     </div>
@@ -42,10 +42,9 @@ export const Header = () => {
                     <div className="absolute left-0 w-full h-[10px] bg-transparent group-hover:block hidden"></div>
                 
                     {/* Dropdown Menu */}
-                    <div className="absolute w-[160px] rounded-20  w-48 bg-lightBlack divide-y divide-gray-100 rounded-10 shadow-lg group-hover:block hidden">
+                    <div className="absolute w-[160px] rounded-15 w-48 bg-lightBlack divide-y divide-gray-100 rounded-10 shadow-lg group-hover:block hidden">
                         <div className="flex flex-col gap-2 p-2">
-                            <Link href="/" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 rounded-15">Account</Link>
-                            <button onClick={() => setIsLoggedIn(false)} className="block text-red text-left px-4 py-2 text-sm text-gray-700 hover:bg-lightBlack rounded-15">
+                            <button onClick={() => setIsLoggedIn(false)} className="block text-red text-left px-4 py-2 text-sm text-gray-700 hover:bg-background rounded-10 transition">
                                 Log Out
                             </button>
                         </div>
@@ -65,19 +64,18 @@ export const Header = () => {
                 onClick={() => setMenuOpen(!menuOpen)}
                 className="hamburger p-4 focus:outline-none"
               >
-                <div className="h-1 w-6 bg-black mb-1 rounded"></div>
-                <div className="h-1 w-6 bg-black mb-1 rounded"></div>
-                <div className="h-1 w-6 bg-black rounded"></div>
+                <div className="h-1 w-6 bg-white mb-1 rounded-[5px]"></div>
+                <div className="h-1 w-6 bg-white mb-1 rounded-[5px]"></div>
+                <div className="h-1 w-6 bg-white rounded-[5px]"></div>
               </button>
 
               {/* The sidebar menu */}
               <div
                 style={{ transform: menuOpen ? 'translateX(0%)' : 'translateX(-100%)' }}
-                className="fixed top-0 left-0 w-full h-full bg-white transform transition-transform duration-300 ease-in-out"
+                className="fixed top-0 left-0 w-full h-full bg-white transform transition-transform duration-300 ease-in-out text-black"
               >
-                <div className="w-full h-full flex flex-col justify-between items-center py-8 px-4">
+                <div className="w-full h-full flex flex-col justify-between items-center py-8 px-4 text-black">
                   <div className="flex flex-col gap-8 justify-center items-center text-medium">
-                    <Link href="/servers" className="block block px-4 py-2 shadow-md rounded-15 font-bold">My Servers</Link>
                     {session ?
                     (
                     <button onClick={() => setIsLoggedIn(false)} className="block text-left px-4 py-2 shadow-md rounded-15 font-bold">
@@ -90,7 +88,7 @@ export const Header = () => {
                     )}
                   </div>
                   <div className="flex flex-col gap-8">
-                    <button onClick={() => setMenuOpen(!menuOpen)} className="w-full text-center text-base block px-4 py-2 text-gray-700 bg-gray-100 rounded-15 font-bold">Close</button>
+                    <button onClick={() => setMenuOpen(!menuOpen)} className="w-full text-center text-base block px-4 py-2 rounded-15 font-bold">Close</button>
                   </div>
                 </div>
               </div>
