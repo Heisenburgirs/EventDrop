@@ -4,6 +4,7 @@ import { Header } from '@/components/Header';
 import Image from 'next/image'
 import { useEffect, useRef, useState } from 'react';
 import confetti from 'canvas-confetti';
+import Link from 'next/link';
 
 const Create = () => {
   const [ERC20, setERC20] = useState<boolean>(true);
@@ -155,13 +156,14 @@ const Create = () => {
                     <div className={`h-6 border-l-2 border-black ${step !== 2 && "opacity-50"}`}></div>
 
                     <div className="flex justify-center items-center w-full">
-                      <button
-                        onClick={() => {}}
-                        disabled={step < 3}
-                        className={`${baseButtonStyle} ${step === 3 ? defaultButtonStyle : step > 3 ? activeButtonStyle : disabledButtonStyle}`}
-                      >
-                        Enable Claiming
-                      </button>
+                      <Link href="/dapp" className={`${baseButtonStyle} ${step === 3 ? defaultButtonStyle : step > 3 ? activeButtonStyle : disabledButtonStyle} text-center`}>
+                        <button
+                          disabled={step < 3}
+                          
+                        >
+                          Enable Claiming
+                        </button>
+                      </Link>
                     </div>
                   </div>
               </div>

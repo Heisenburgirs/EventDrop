@@ -44,6 +44,7 @@ const config: Config = {
       signText: "#f34921",
       borderColor: "#2c2d2e",
       red: "#d33f4c",
+      green: "#3fd34c",
     }
   },
   plugins: [],

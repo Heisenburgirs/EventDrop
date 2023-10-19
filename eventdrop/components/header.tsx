@@ -12,6 +12,7 @@ import Link from 'next/link';
 export const Header = () => {
   const pathname = usePathname();
   const isLanding = pathname === "/dapp";
+  const isClaim = pathname === "/claim";
 
 	// Mobile Menu
   const [menuOpen, setMenuOpen] = useState(false);
@@ -24,7 +25,7 @@ export const Header = () => {
         <Link href="/" className="flex text-medium text-white items-center font-bold px-4 py-4">
           Event<span className="text-orange">Drop</span>
         </Link>
-        {isLanding ? (
+        {isLanding || isClaim ? (
           <>
             <div className="flex gap-4">
               {/* Discord Login & User Profile */}
